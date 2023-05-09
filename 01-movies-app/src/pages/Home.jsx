@@ -12,7 +12,7 @@ const Home = () => {
   }, [])
 
   return (
-    <div className='container bg-pink'>
+    <div className='container bg-pink rounded-3'>
       <h1>Home</h1>
       <div className='row'>
         {
