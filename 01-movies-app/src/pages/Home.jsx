@@ -5,7 +5,7 @@ const Home = () => {
   const [searchTerm, setSearchTerm] = useState('') // palabra para buscar
 
   useEffect(() => {
-    fetch('https://api.tvmaze.com/shows/1/images')
+    fetch('https://api.tvmaze.com/shows')
       .then(response => response.json())
       .then(data => setSeries(data))
       .catch(error => console.error(error))
@@ -17,10 +17,11 @@ const Home = () => {
       <div className='row'>
         {
             series.map(series => (
-              <div className='col-sm-3 mb-3'>
+              <div className='col-sm-3 mb-3' key={series.id}>
                 <div className='card'>
+                  <img className='card-img-top' src={series.image.medium} alt={series.name} />
                   <div className='card-body'>
-                    <h5 className='card-title'>{series.type}</h5>
+                    <h5 className='card-title'>{series.name}</h5>
                   </div>
                 </div>
               </div>
