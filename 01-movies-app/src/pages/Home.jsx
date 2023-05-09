@@ -14,8 +14,23 @@ const Home = () => {
   return (
     <div className='container'>
       <h1>Home</h1>
-    </div>
+      <div className='row'>
+        {
+            series.map(series => (
+              <div className='col-sm-3 mb-3'>
+                <div className='card'>
+                  <div className='card-body'>
+                    <h5 className='card-title'>{series.type}</h5>
+                  </div>
+                </div>
+              </div>
 
+            ))
+        }
+
+      </div>
+
+    </div>
   )
 }
 
