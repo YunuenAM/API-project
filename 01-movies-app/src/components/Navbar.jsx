@@ -1,4 +1,14 @@
+import { useState } from 'react' // importamos useState
+
 const Navbar = () => {
+  const [searchTerm, setSearchTerm] = useState('')
+  const handleSearch = (event) => {
+    setSearchTerm(event.target.value)
+  } //  agregamos el estado searchTerm
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+  }
   return (
     <header className='p-3 mb-3 border-bottom'>
       <div className='container navbar-expand-lg p-5 bg-purple rounded-3'>
@@ -13,8 +23,8 @@ const Navbar = () => {
 
           </ul>
 
-          <form className='col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3' role='search'>
-            <input type='search' className='form-control w-2 p-3 rounded-2' placeholder='Search...' aria-label='Search' />
+          <form className='col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3' onSubmit={handleSubmit} role='search'>
+            <input type='search' className='form-control w-2 p-3 rounded-2' placeholder='Search...' aria-label='Search' vañue={searchTerm} onChange={handleSearch} />
           </form>
 
           <div className='dropdown text-end'>
