@@ -3,3 +3,7 @@ body{
   padding: 0rem;
  
 }
+
+.container.bg-pink {
+  background-color: #F1419A;
+}
