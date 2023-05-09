@@ -24,7 +24,7 @@ const Navbar = () => {
           </ul>
 
           <form className='col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3' onSubmit={handleSubmit} role='search'>
-            <input type='search' className='form-control w-2 p-3 rounded-2' placeholder='Search...' aria-label='Search' vañue={searchTerm} onChange={handleSearch} />
+            <input type='search' className='form-control w-2 p-3 rounded-2' placeholder='Search...' aria-label='Search' value={searchTerm} onChange={handleSearch} />
           </form>
 
           <div className='dropdown text-end'>
