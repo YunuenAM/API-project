@@ -45,7 +45,7 @@ const Home = () => {
         })}
         {series.filter(series => series.show.image).length === 0 && (
           <div className='col-sm-12 text-center'>
-            <h2>Enter a show</h2>
+            <h2>Please enter the show name that generates matches</h2>
           </div>
         )}
       </div>

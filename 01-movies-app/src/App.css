@@ -10,3 +10,8 @@ body{
 .container.bg-purple{
   background-color: #C785C8;
 }
+
+.button .search-button{
+  background-color: #F1419A;
+}
+            

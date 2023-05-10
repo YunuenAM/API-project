@@ -19,8 +19,9 @@ const SearchBar = ({ handleSearch }) => {
           <form className='col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3' role='search' onSubmit={(event) => { event.preventDefault(); handleSearch() }}>
             <input type='search' className=' search-button form-control w-2 p-3 rounded-2' placeholder='Search...' aria-label='Search' value={search} onChange={(event) => { setSearch(event.target.value) }} />
           </form>
+
           <button
-            className='search-button'
+            className='search-button btn btn-dark'
             onClick={() => handleSearch(search)}
           >
             Search
@@ -28,7 +29,7 @@ const SearchBar = ({ handleSearch }) => {
 
           <div className='dropdown text-end'>
             <a href='#' className='d-block link-dark text-decoration-none dropdown-toggle' data-bs-toggle='dropdown' aria-expanded='false'>
-              <img src='https://github.com/YunuenAM.png' alt='mdo' width='64' height='64' className='rounded-circle' />
+              <img src='https://github.com/YunuenAM.png' alt='mdo' width='94' height='94' className='rounded-circle' />
             </a>
             <ul className='dropdown-menu text-large'>
               <li><a className='dropdown-item' href='#'>Home</a></li>
