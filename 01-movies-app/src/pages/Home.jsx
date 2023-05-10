@@ -27,8 +27,9 @@ const Home = () => {
       <h1>Home</h1>
       <SearchBar handleSearch={setSearchTerm} />
       <div className='row'>
-        {
-            series.map(series => (
+        {series.map(series => {
+          if (series.show.image) {
+            return (
               <div className='col-sm-3 mb-3' key={series.show.id}>
                 <div className='card'>
                   <img className='card-img-top' src={series.show.image.medium} alt={series.show.name} />
@@ -37,12 +38,17 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-
-            ))
-        }
-
+            )
+          } else {
+            return null
+          }
+        })}
+        {series.filter(series => series.show.image).length === 0 && (
+          <div className='col-sm-12 text-center'>
+            <h2>Enter a show</h2>
+          </div>
+        )}
       </div>
-
     </div>
   )
 }
