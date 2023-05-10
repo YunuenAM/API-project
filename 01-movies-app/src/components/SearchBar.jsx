@@ -1,14 +1,7 @@
-import { useState } from 'react' // importamos useState
+import { useState } from 'react'
 
-const Navbar = () => {
-  const [searchTerm, setSearchTerm] = useState('')
-  const handleSearch = (event) => {
-    setSearchTerm(event.target.value)
-  } //  agregamos el estado searchTerm
-
-  const handleSubmit = (event) => {
-    event.preventDefault()
-  }
+const SearchBar = ({ handleSearch }) => {
+  const [search, setSearch] = useState('')
   return (
     <header className='p-3 mb-3 border-bottom'>
       <div className='container navbar-expand-lg p-5 bg-purple rounded-3'>
@@ -23,9 +16,15 @@ const Navbar = () => {
 
           </ul>
 
-          <form className='col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3' onSubmit={handleSubmit} role='search'>
-            <input type='search' className='form-control w-2 p-3 rounded-2' placeholder='Search...' aria-label='Search' value={searchTerm} onChange={handleSearch} />
+          <form className='col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3' role='search' onSubmit={(event) => { event.preventDefault(); handleSearch() }}>
+            <input type='search' className=' search-button form-control w-2 p-3 rounded-2' placeholder='Search...' aria-label='Search' value={search} onChange={(event) => { setSearch(event.target.value) }} />
           </form>
+          <button
+            className='search-button'
+            onClick={() => handleSearch(search)}
+          >
+            Search
+          </button>
 
           <div className='dropdown text-end'>
             <a href='#' className='d-block link-dark text-decoration-none dropdown-toggle' data-bs-toggle='dropdown' aria-expanded='false'>
@@ -46,4 +45,4 @@ const Navbar = () => {
     </header>
   )
 }
-export default Navbar
+export default SearchBar
