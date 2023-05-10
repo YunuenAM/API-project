@@ -1,12 +1,14 @@
 import './App.css'
-import Navbar from './components/SearchBar'
-import Home from './pages/Home'
+import { BrowserRouter } from 'react-router-dom'
+import RoutesIndex from './routes'
 
 function App () {
   return (
     <>
+      <BrowserRouter>
+        <RoutesIndex />
+      </BrowserRouter>
 
-      <Home />
     </>
   )
 }
