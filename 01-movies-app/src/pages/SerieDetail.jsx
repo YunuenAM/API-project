@@ -15,11 +15,11 @@ const SerieDetail = () => {
     return <div>Loading...</div>
   }
   return (
-    <div className='container bg-pink rounded-3 p-3'>
-      <div className='card bg-pink '>
+    <div className='container col-6 mt-4 bg-pink rounded-3 p-3'>
+      <div className='card bg-pink   '>
         <div className='card-header'>
           <h1> {serie.name} </h1>
-          <p><NavLink>{`Official Site: ${serie.officialSite}`}</NavLink></p>
+          <p><NavLink to={serie.officialSite} target='_blank'>{`Official Site: ${serie.officialSite}`}</NavLink></p>
           <img src={serie.image.medium} alt={serie.name} />
           <p>{serie.character}</p>
         </div>
