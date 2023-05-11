@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import SearchBar from '../components/SearchBar'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
   const [series, setSeries] = useState([]) // lista de series
@@ -35,6 +36,7 @@ const Home = () => {
                   <img className='card-img-top' src={series.show.image.medium} alt={series.show.name} />
                   <div className='card-body'>
                     <h5 className='card-title'>{series.show.name}</h5>
+                    <Link to={`serie/${series.show.id}`}>{`Go to ${series.show.name}`}</Link>
                   </div>
                 </div>
               </div>
