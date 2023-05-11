@@ -15,9 +15,13 @@ const SerieDetail = () => {
     return <div>Loading...</div>
   }
   return (
-    <div>
-      <h1>Serie detail: {serie.name} </h1>
-      <img src={serie.image.medium} alt={serie.name} />
+    <div className='container bg-pink rounded-3'>
+      <div className='card bg-pink '>
+        <div className='card-header'>
+          <h1> {serie.name} </h1>
+          <img src={serie.image.medium} alt={serie.name} />
+        </div>
+      </div>
     </div>
   )
 }
