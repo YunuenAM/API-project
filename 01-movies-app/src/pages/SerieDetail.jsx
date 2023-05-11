@@ -15,7 +15,10 @@ const SerieDetail = () => {
     return <div>Loading...</div>
   }
   return (
-    <h1>Serie detail: {serie.name} </h1>
+    <div>
+      <h1>Serie detail: {serie.name} </h1>
+      <img src={serie.image.medium} alt={serie.name} />
+    </div>
   )
 }
 export default SerieDetail
