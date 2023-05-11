@@ -25,7 +25,7 @@ const Home = () => {
 
   return (
     <div className='container bg-pink rounded-3'>
-      <h1>Home</h1>
+      <h1 className='text-light'>Home</h1>
       <SearchBar handleSearch={setSearchTerm} />
       <div className='row'>
         {series.map(series => {
@@ -33,10 +33,12 @@ const Home = () => {
             return (
               <div className='col-sm-3 mb-3' key={series.show.id}>
                 <div className='card'>
-                  <img className='card-img-top' src={series.show.image.medium} alt={series.show.name} />
-                  <div className='card-body'>
-                    <h5 className='card-title'>{series.show.name}</h5>
-                    <Link to={`serie/${series.show.id}`}>{`Go to ${series.show.name}`}</Link>
+                  <div className='text-center'>
+                    <img className='card-img-top' src={series.show.image.medium} alt={series.show.name} />
+                    <div className='card-body'>
+                      <h5 className='card-title'>{series.show.name}</h5>
+                      <Link to={`serie/${series.show.id}`}>{`Go to ${series.show.name}`}</Link>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -47,7 +49,7 @@ const Home = () => {
         })}
         {series.filter(series => series.show.image).length === 0 && (
           <div className='col-sm-12 text-center'>
-            <h2>Are you ready to find content from your favorite show?📽️🍿</h2>
+            <h2 className='text-light'>Are you ready to find content from your favorite show?📽️🍿</h2>
           </div>
         )}
       </div>

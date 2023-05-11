@@ -17,10 +17,10 @@ const SerieDetail = () => {
   return (
     <div className='container col-6 mt-4 bg-pink rounded-3 p-3'>
       <div className='card bg-pink   '>
-        <div className='card-header'>
+        <div className='card-header mx-auto text-center'>
           <h1> {serie.name} </h1>
           <p><NavLink to={serie.officialSite} target='_blank'>{`Official Site: ${serie.officialSite}`}</NavLink></p>
-          <img src={serie.image.medium} alt={serie.name} />
+          <img src={serie.image.medium} className='mx-auto d-block' alt={serie.name} />
           <p>{serie.character}</p>
         </div>
       </div>
