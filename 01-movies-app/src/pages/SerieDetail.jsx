@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { NavLink, useParams } from 'react-router-dom'
 const SerieDetail = () => {
   const { id } = useParams()
   const [serie, setSerie] = useState(null)
@@ -15,11 +15,13 @@ const SerieDetail = () => {
     return <div>Loading...</div>
   }
   return (
-    <div className='container bg-pink rounded-3'>
+    <div className='container bg-pink rounded-3 p-3'>
       <div className='card bg-pink '>
         <div className='card-header'>
           <h1> {serie.name} </h1>
+          <p><NavLink>{`Official Site: ${serie.officialSite}`}</NavLink></p>
           <img src={serie.image.medium} alt={serie.name} />
+          <p>{serie.character}</p>
         </div>
       </div>
     </div>
