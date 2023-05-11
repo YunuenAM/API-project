@@ -33,7 +33,10 @@ const SerieDetail = () => {
           <h2>Cast</h2>
           <ul>
             {cast.map(actor => (
-              <li key={actor.person.id}>{actor.person.name}</li>
+              <li key={actor.person.id}>
+                <img src={actor.person.image.medium} alt={actor.person.name} />
+                <span>{actor.person.name}</span>
+              </li>
             ))}
           </ul>
         </div>
